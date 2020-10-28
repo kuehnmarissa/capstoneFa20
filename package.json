@@ -1,0 +1,24 @@
+{
+  "name": "capstonefa20",
+  "version": "1.0.0",
+  "description": "Hy-Tech Club Software Dev Capstone Fall 2020",
+  "main": "index.js",
+  "dependencies": {
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuehnmarissa/capstoneFa20.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kuehnmarissa/capstoneFa20/issues"
+  },
+  "homepage": "https://github.com/kuehnmarissa/capstoneFa20#readme"
+}
