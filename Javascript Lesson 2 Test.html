@@ -1,0 +1,203 @@
+<html>
+    <style>
+ body{
+     text-align: center;
+ }
+ #quiz-wrap {
+  font-family: arial, sans-serif;
+}
+
+
+#quiz-wrap .question {
+  padding: 15px;
+  margin: 10px;
+  background: #f2f2f2;
+  border: 3px solid #ccc;
+  border-radius: 10px;
+}
+
+#quiz-wrap h1 {
+  font-size: 22px;
+  margin: 5px 0;
+}
+
+#quiz-wrap label {
+  display: block;
+  width: 100%;
+  font-size: 20px;
+  margin-top: 10px;
+  color: #333;
+}
+
+#quiz-wrap input[type=submit] {
+  background: #972121;
+  color: #fff;
+  padding: 10px;
+  border: 0;
+  padding: 10px 20px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+button{
+    background: #972121;
+  color: #fff;
+  padding: 10px;
+  border: 0;
+  padding: 10px 20px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+
+    </style>
+<head>
+   <script>
+  var questions = [
+  {
+    q : "Did you Get Node.js?",
+    o : [
+      "Yes",
+      "No"
+     
+      
+    ],
+    a : 0
+  },
+  {
+    q : "Did printing 'Hello World' to the console work?",
+    o : [
+    "Yes",
+      "No"
+      
+     
+    ],
+    a : 0
+  },
+ 
+];
+
+
+
+var quiz = {
+  draw : function () {
+
+
+
+    var wrapper = document.getElementById("quiz-wrap");
+
+
+    for (var index in questions) {
+      var number = parseInt(index) + 1; 
+      var qwrap = document.createElement("div"); 
+      qwrap.classList.add("question"); 
+
+      
+      var question = document.createElement("h1");
+      question.innerHTML = number + ") " + questions[index]['q'];
+      qwrap.appendChild(question);
+
+     
+      for (var oindex in questions[index]['o']) {
+        
+        var label = document.createElement("label");
+        qwrap.appendChild(label);
+
+       
+        var option = document.createElement("input");
+        option.type = "radio";
+        option.value = oindex;
+        option.required = true;
+        option.classList.add("oquiz"); 
+        option.name = "quiz-" + number;
+        label.appendChild(option);
+
+        
+        var otext = document.createTextNode(questions[index]['o'][oindex]);
+        label.appendChild(otext);
+      }
+
+      
+      wrapper.appendChild(qwrap);
+    }
+
+    
+    var submitbutton = document.createElement("input");
+    submitbutton.type = "submit";
+    wrapper.appendChild(submitbutton);
+    wrapper.addEventListener("submit", quiz.submit);
+  },
+
+  submit : function (evt) {
+  
+  
+    evt.preventDefault();
+    evt.stopPropagation();
+
+
+    var selected = document.querySelectorAll(".oquiz:checked");
+
+
+    var score = 0;
+    for (var index in questions) {
+      if (selected[index].value == questions[index]['a']) {
+        score++;
+      }
+    }
+
+    
+    var total = selected.length;
+    var percent = score / total ;
+
+   
+    var donebtn = document.createElement("BUTTON");
+  donebtn.innerHTML = "Return to Main Page";
+  donebtn.onclick = function(){
+
+window.location.href = 'Main Page.html';
+
+  };
+
+ 
+  
+  document.body.appendChild(donebtn);
+  var space = document.createElement("BR");
+  document.body.appendChild(space);
+  var backbtn = document.createElement("BUTTON");
+  backbtn.innerHTML = "Try Again";
+  backbtn.onclick = function(){
+
+    location.reload();
+
+  };
+  
+  document.body.appendChild(backbtn);
+    var html = "<h1>";
+    if (percent>=1) {
+      html += "WELL DONE!";
+    }  else {
+      html += "Try looking back and seeing if you can get these tasks done. If it is not working, research the problems you are having.";
+      donebtn.innerHTML = "Rewatch the Lesson";
+      donebtn.onclick = function(){
+
+window.location.href = 'Javascript Lesson 1.html';
+
+  };
+      
+      var fail = document.createElement("H3");
+      fail.innerHTML = "You Must Get 100% to Complete this Lesson and Return to the Main Screen!" 
+      document.body.appendChild(fail);
+    }
+    html += "</h1>";
+    html += "<div>You scored " + score + " out of " + total + ".</div>";
+    document.getElementById("quiz-wrap").innerHTML = html;
+  }
+};
+
+
+window.addEventListener("load", quiz.draw);
+   </script>
+</head>
+<body>
+    <form id="quiz-wrap"></form>
+</body>
+</html>
