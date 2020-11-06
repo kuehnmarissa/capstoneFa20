@@ -1,15 +1,97 @@
+<!DOCTYPE html>
 
 <html>
-        <style>
-        body{text-align: center;}
-        
-        </style>
-    <head>
-       
-    </head>
-    <body>
-       <h1>TIMER STUFF HERE</h1> 
-       <a href="Main Page.html">Back to Main Page.</a>
-       
-    </body>
-    </html>
+<style>
+#img{
+  width: 75px;
+  float: right;
+  visibility: hidden;
+}
+
+</style>
+<body>
+  <img src="award.png" id="img">
+  <h3 id="result"></h3> 
+  <h3 id="todayTime"></h3>
+  Minutes:<input type="text" id="demo" value="0" disabled />
+  <br>
+  <br>
+  <button onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()" id="disable">Start counter!</button>
+  
+
+
+  <button onClick="doneCounting()" id="stop" disabled>Stop counter!</button>
+
+  <script>
+   
+    var timesarray = [];
+
+    function Caculate() {
+      var sum = 0;
+     
+      for (var i = 0; i < timesarray.length; i++) {
+        sum = sum + parseInt(timesarray[i]);
+        console.log(sum);
+      } 
+      document.getElementById("result").innerHTML = "total time: " + sum;
+    }
+
+    window.onload = function () {
+      var x = localStorage.getItem("mytimes");
+      var tempObject = JSON.parse(x);
+      timesarray = tempObject && tempObject.timesarray ? tempObject.timesarray : [];
+      Caculate();
+
+    }
+    var c = 0;
+
+   
+      
+      
+
+    function disable() {
+      document.getElementById("disable").disabled = true;
+      document.getElementById("stop").disabled = false;
+    }
+    function myCounter() {
+      var hey = document.getElementById("demo").value = ++c;
+      if(c === 1){
+        alert("You have clocked your first minute of Coding, here is the starting award!");
+        document.getElementById("img").style.visibility = "visible";
+      
+    
+    };
+    }
+
+    function doneCounting() {
+      clearInterval(myTimer);
+     
+      var heyo = document.getElementById("demo").value;
+      
+      document.getElementById("disable").disabled = false;
+      document.getElementById("stop").disabled = true;
+
+      timesarray.push(heyo);
+      var tempObject = { timesarray: timesarray };
+      localStorage.setItem("mytimes", JSON.stringify(tempObject));
+      
+      Caculate();
+      
+
+      c = 0; 
+      document.getElementById("demo").value = 0;
+      
+      
+     
+      
+      
+
+
+    }
+    
+   
+  </script>
+
+</body>
+
+</html>
