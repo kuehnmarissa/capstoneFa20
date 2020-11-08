@@ -1,189 +1,172 @@
 <html>
-<style>
-   .dropdown .dropbtn {
+   <style>
+      body{
+         background-color: darkcyan;
+         font-family: 'Courier New';
+      }
 
+      .dropdown .dropbtn {
+         padding: 100;
+      }
 
-      padding: 15px;
-      background-color: lightblue;
+      .dropdown {
+         float: left;
+         overflow: hidden;
+      }
 
+      .dropdown-content {
+         display: none;
+         position: absolute;
+      }
 
-   }
+      .dropdown-content .header {
+         background: orange;
+         color: white;
+         padding: 0.25vw;
+      }
 
-   .dropdown {
-      float: left;
-      overflow: hidden;
-   }
+      .dropdown:hover .dropdown-content {
+         display: block;
+      }
 
+      .column {
+         float: left;
+         background-color: #ccc;
+         padding: 3vw;
+      }
 
+      .column a {
+         float: none;
+         color: black;
+         text-decoration: none;
+         display: block;
+         padding: 1.25vw;
+         text-align:center;
 
+      }
 
-   .dropdown-content {
-      display: none;
-      position: absolute;
-
-
-
-   }
-
-   .dropdown-content .header {
-      background: orange;
-      padding: 16px;
-      color: white;
-   }
-
-   .dropdown:hover .dropdown-content {
-      display: block;
-   }
-
-   
-   .column {
-      float: left;
-
-      padding: 10px;
-      background-color: #ccc;
-
-   }
-
-   .column a {
-      float: none;
-      color: black;
-      padding: 16px;
-      text-decoration: none;
-      display: block;
-
-   }
-
-   .column a:hover {
-      background-color: lightgrey;
-   }
-
-   #signOut {
-      position: fixed;
-      right: 5;
-      top: 25;
-   }
-
-   #logo {
-      width: 100px;
-      right: 60;
-      position: fixed;
-   }
-
-   h1 {
-      text-align: center;
-   }
-</style>
-
-<head>
-   <script>
-     var q = 0;
-   
-      function turnGreen(i) {
-
-
-         document.getElementsByClassName("changeGreen")[i].style.backgroundColor = "green";
-         
-         
-
-
+      .column a:hover {
+         background-color: lightgrey;
       }
 
       
-    function buttonClick(addStreak) {
+   </style>
+
+   <head>
+
+      <link rel="stylesheet" type="text/css" href="base.css">
+
+      <script>
+      var q = 0;
+      
+         function turnGreen(i) {
+
+
+            document.getElementsByClassName("changeGreen")[i].style.backgroundColor = "green";
+            
+            
+
+
+         }
+
+         
+      function buttonClick(addStreak) {
+      
+         for (i = 0; i < addStreak; i++){
+      q++;
+
+         }
+         document.getElementById('streak').value = q;
+         
+         
+         }
+      </script>
+      
+   </head>
+
+   <body>
+      <input type="number" id="streak" style="background-color: snow; color: red; font-weight: bolder; width:75vw" disabled>
      
-      for (i = 0; i < addStreak; i++){
-     q++;
+      <button onclick="location.href='Begin Page.html'" id="signOut" style="position: fixed; right: 1.5vw; top: 1vw">
+      Sign Out</button>
 
-      }
-      document.getElementById('streak').value = q;
-        
-       
-      }
-   </script>
-   
-</head>
+      <img src="Logo.png" id="logo" width=100vw height=75vw 
+      style="position: fixed; top:2.25vw; right: 10vw">
 
-<body>
-   <input type="number" id="streak" disabled>
-   
-   <img src="Logo.png" id="logo">
-   <button onclick="location.href='Begin Page.html'" id="signOut">Sign Out</button>
-   <h1>MAIN PAGE</h1>
+      <h1 style="text-align:right"> habit; </h1>
+      <p style="text-align: right;">Hello, test.</p>
 
-   <div class="dropdown">
-      <button class="dropbtn">Lessons
+      <div class="dropdown">
+         <button class="dropbtn" style="padding: 1vw; width: 75vw; text-align: center; font-size: x-large; font-family: Courier New; background-color: orange; font-weight: bold;">
+            LESSONS</button>
 
-      </button>
-      <div class="dropdown-content">
-         <div class="header">
-            <h2>Lessons</h2>
+         <div class="dropdown-content">
+            <div class="header">
+               <h2>Beginner-friendly lessons to get you started!</h2>
+            </div>
+            <div class="row">
+               <div class="column">
+                  <h3>Starting GitHub</h3>
+                  <a  target="_blank" rel="noopener noreferrer" href="Lesson 1 Page.html" class="changeGreen" onclick="turnGreen(0); buttonClick(10)">Lesson 1</a>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+               </div>
+
+               <div class="column">
+                  <h3>Choosing An IDE</h3>
+                  <a target="_blank" rel="noopener noreferrer" href="Lesson 2 Page.html" href="#" class="changeGreen" onclick="turnGreen(1); buttonClick(10)">Lesson 1</a>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+               </div>
+               <div class="column">
+                  <h3>Basic HTML/CSS</h3>
+                  <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 1.html" class="changeGreen" onclick="turnGreen(2); buttonClick(10)">Lesson 1</a>
+                  <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 2.html" class="changeGreen" onclick="turnGreen(3); buttonClick(10)">Lesson 2</a>
+                  <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 3.html" class="changeGreen" onclick="turnGreen(4); buttonClick(10)">Lesson 3</a>
+                  <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 4.html" class="changeGreen" onclick="turnGreen(5); buttonClick(10)">Lesson 4</a>
+                  <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 5.html" class="changeGreen" onclick="turnGreen(6); buttonClick(10)">Lesson 5</a>
+
+               </div>
+               <div class="column">
+                  <h3>Basic Javascript</h3>
+                  <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 1.html" class="changeGreen" onclick="turnGreen(7); buttonClick(10)">Lesson 1</a>
+                  <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 2.html" class="changeGreen" onclick="turnGreen(8); buttonClick(10)">Lesson 2</a>
+                  <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 3.html" class="changeGreen" onclick="turnGreen(9); buttonClick(10)">Lesson 3</a>
+                  <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 4.html" class="changeGreen" onclick="turnGreen(10); buttonClick(10)">Lesson 4</a>
+                  <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 5.html" class="changeGreen" onclick="turnGreen(11); buttonClick(10)">Lesson 5</a>
+               </div>
+            </div>
+
          </div>
-         <div class="row">
-            <div class="column">
-               <h3>Starting GitHub</h3>
-               <a  target="_blank" rel="noopener noreferrer" href="Lesson 1 Page.html" class="changeGreen" onclick="turnGreen(0); buttonClick(10)">Lesson 1</a>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-
-
-
-
-            </div>
-            <div class="column">
-               <h3>Choosing An IDE</h3>
-               <a target="_blank" rel="noopener noreferrer" href="Lesson 2 Page.html" href="#" class="changeGreen" onclick="turnGreen(1); buttonClick(10)">Lesson 1</a>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-            </div>
-            <div class="column">
-               <h3>Basic HTML/CSS</h3>
-               <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 1.html" class="changeGreen" onclick="turnGreen(2); buttonClick(10)">Lesson 1</a>
-               <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 2.html" class="changeGreen" onclick="turnGreen(3); buttonClick(10)">Lesson 2</a>
-               <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 3.html" class="changeGreen" onclick="turnGreen(4); buttonClick(10)">Lesson 3</a>
-               <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 4.html" class="changeGreen" onclick="turnGreen(5); buttonClick(10)">Lesson 4</a>
-               <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 5.html" class="changeGreen" onclick="turnGreen(6); buttonClick(10)">Lesson 5</a>
-
-            </div>
-            <div class="column">
-               <h3>Basic Javascript</h3>
-               <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 1.html" class="changeGreen" onclick="turnGreen(7); buttonClick(10)">Lesson 1</a>
-               <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 2.html" class="changeGreen" onclick="turnGreen(8); buttonClick(10)">Lesson 2</a>
-               <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 3.html" class="changeGreen" onclick="turnGreen(9); buttonClick(10)">Lesson 3</a>
-               <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 4.html" class="changeGreen" onclick="turnGreen(10); buttonClick(10)">Lesson 4</a>
-               <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 5.html" class="changeGreen" onclick="turnGreen(11); buttonClick(10)">Lesson 5</a>
-            </div>
-         </div>
-
       </div>
-   </div>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <a href="Timer Page.html">Timer</a>
-   <br>
-   <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <a href="Timer Page.html">Timer</a>
+      <br>
+      <br>
 
-</body>
+   </body>
 
 </html>
