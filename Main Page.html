@@ -1,67 +1,212 @@
+
 <html>
+        
+<title>habit;</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-   #img {
-      width: 75px;
-      float: right;
+    
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+
+
+    #title{ font-size: 50px;
+    
+    }
+    #result{font-weight: bold;}
+
+#img {
+    
       visibility: hidden;
    }
 
-   body {
-      background-color: darkcyan;
-      font-family: 'Courier New';
-   }
 
-   .dropdown .dropbtn {
-      padding: 100;
-   }
-
-   .dropdown {
-      float: left;
-      overflow: hidden;
-   }
-
-   .dropdown-content {
-      display: none;
-      position: absolute;
-   }
-
-   .dropdown-content .header {
-      background: orange;
-      color: white;
-      padding: 0.25vw;
-   }
-
-   .dropdown:hover .dropdown-content {
-      display: block;
-   }
-
-   .column {
-      float: left;
-      background-color: #ccc;
-      padding: 3vw;
-   }
-
-   .column a {
-      float: none;
-      color: black;
-      text-decoration: none;
-      display: block;
-      padding: 1.25vw;
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+img{ width: 100%;
+  height: auto;}
+  h1, h2, h3, p{
       text-align: center;
-
-   }
-
-   .column a:hover {
-      background-color: lightgrey;
-   }
+      font-family: 'Courier New';
+  }
 </style>
+<body>
+       
+  
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+   
+    <a target="_blank" rel="noopener noreferrer" href="Lesson 1 Page.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white changeGreen" onclick="lessonClick(); disable(); turnGreen(0);">Getting Started with Github</a>
+   
+    <a target="_blank" rel="noopener noreferrer" href="Lesson 2 Page.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white changeGreen" onclick="lessonClick(); disable(); turnGreen(1);">Choosing An IDE</a>
+     <div class="dropdown"></div>
+    <a href="#" onclick="myFunction()" class="w3-bar-item w3-button w3-hide-small w3-hover-white dropbtn dropdown">Basic HTML & CSS</a>
+    <a href="#" onclick="myFunction2()" class="w3-bar-item w3-button w3-hide-small w3-hover-white dropbtn dropdown">Basic Javascript</a>
+  
+         </div>
+    
+    <a  class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white"  onclick="location.href='Begin Page.html'" id="signOut" style="position: fixed; right: 1.5vw; ">Sign Out</a>
+  </div>
+</div>
 
-<head>
+<div id="myDropdown" class="dropdown-content" style="position: relative">
+        <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 1.html" class="changeGreen"
+                  onclick="lessonClick(); disable(); turnGreen(2);"
+                  onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 1</a>
+                  <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 2.html" class="changeGreen"
+                  onclick="lessonClick(); disable(); turnGreen(3);"
+                  onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 2</a>
+               <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 3.html" class="changeGreen"
+                  onclick="lessonClick(); disable(); turnGreen(4);"
+                  onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 3</a>
+               <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 4.html" class="changeGreen"
+                  onclick="lessonClick(); disable(); turnGreen(5);"
+                  onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 4</a>
+               <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 5.html" class="changeGreen"
+                  onclick="lessonClick(); disable(); turnGreen(6);"
+                  onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 5</a>
+      </div>
 
-   <link rel="stylesheet" type="text/css" href="base.css">
+      <div id="myDropdown2" class="dropdown-content" style="position: relative">
+    
+            <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 1.html" class="changeGreen"
+            onclick="turnGreen(7); lessonClick(); disable();"
+            onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 1</a>
+         <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 2.html" class="changeGreen"
+            onclick="turnGreen(8); lessonClick(); disable();"
+            onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 2</a>
+         <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 3.html" class="changeGreen"
+            onclick="turnGreen(9); lessonClick(); disable();"
+            onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 3</a>
+         <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 4.html" class="changeGreen"
+            onclick="turnGreen(10); lessonClick(); disable();"
+            onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 4</a>
+         <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 5.html" class="changeGreen"
+            onclick="turnGreen(11); lessonClick(); disable();"
+            onClick="myTimer = setInterval(myCounter, 1000); disable() ">Lesson 5</a>
+    
+    
+    </div>
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-   <script>
-      window.onload = function () {
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+     
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">WELCOME TO habit;!</h1>
+      <p>habit; is your personalized habit tracker. What does habit; do? Well, habit; keeps track of how much you code each day, giving you awards, and goals to set. habit; is made for you to enjoy and be excited for computer programming, and gives you the proper tools to do so! </p>
+    </div>
+    <div class="w3-third w3-container">
+         <h1 id="title">habit;</h1>
+      <img class="w3-border w3-padding-large w3-padding-32 w3-center" src="logo.png"/>
+     
+    </div>
+  </div>
+
+  <div class="w3-row">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">How does habit; work?</h1>
+      <p>Above, you have lessons from experienced computer programmers, giving you lessons and code alongs. After the lessons, you will probably recieve a review test, making sure you are truly gaining some valuable programming knowledge. When you start your lesson, habit; will automatically keep track of how many minutes you coded that day. Are you finished with the lessons or are already an experienced programmer? You can still use habit! Use the timer function and push start timer, then when you have finished coding on wherever you do your programming at, click stop timer and it will log how many minutes you have finished! As you can see, anyone can use habit;!</p>
+    </div>
+    <div class="w3-third w3-container">
+        <h2>TIMER FUNCTION:</h2>
+            <h3 id="result"></h3>
+            <input type="text" id="demo" value="0" style="background-color: snow; color: red; font-weight: bolder; width:75vw"
+            disabled>
+            <button onclick="lessonClick(); disable()" id="disable">Start counter!</button>
+   <button onClick="doneCounting()" id="stop" disabled>Stop counter!</button>
+            <h3 id="todayTime"></h3>
+            <br>
+            <br>
+        <h3>Your Awards:</h3>
+      <img class="w3-border w3-padding-large w3-padding-32 w3-center" src="award.png" id="img"/>
+      
+      
+    </div>
+  </div>
+
+  
+
+
+  
+
+  
+
+<!-- END MAIN -->
+</div>
+
+
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+
+
+
+
+
+
+
+window.onload = function () {
          var x = localStorage.getItem("mytimes");
          var tempObject = JSON.parse(x);
          timesarray = tempObject && tempObject.timesarray ? tempObject.timesarray : [];
@@ -153,121 +298,30 @@
       }
 
 
-   </script>
 
-</head>
 
-<body>
-   <img src="award.png" id="img">
-   <h3 id="result"></h3>
-   <h3 id="todayTime"></h3>
-   <input type="text" id="demo" value="0" style="background-color: snow; color: red; font-weight: bolder; width:75vw"
-      disabled>
 
-   <button onclick="location.href='Begin Page.html'" id="signOut" style="position: fixed; right: 1.5vw; top: 1vw">
-      Sign Out</button>
+      function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+function myFunction2() {
+  document.getElementById("myDropdown2").classList.toggle("show");
+}
 
-   <img src="Logo.png" id="logo" width=100vw height=75vw style="position: fixed; top:2.25vw; right: 10vw">
-
-   <h1 style="text-align:right"> habit; </h1>
-   <p style="text-align: right;">Hello, test.</p>
-
-   <div class="dropdown">
-      <button class="dropbtn"
-         style="padding: 1vw; width: 75vw; text-align: center; font-size: x-large; font-family: Courier New; background-color: orange; font-weight: bold;">
-         LESSONS</button>
-
-      <div class="dropdown-content">
-         <div class="header">
-            <h2>Beginner-friendly lessons to get you started!</h2>
-         </div>
-         <div class="row">
-            <div class="column">
-               <h3>Starting GitHub</h3>
-               <a target="_blank" rel="noopener noreferrer" href="Lesson 1 Page.html" class="changeGreen"
-                  onclick="lessonClick(); disable(); turnGreen(0);">Lesson 1</a>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-            </div>
-
-            <div class="column">
-               <h3>Choosing An IDE</h3>
-               <a target="_blank" rel="noopener noreferrer" href="Lesson 2 Page.html" href="#" class="changeGreen"
-                  onclick="lessonClick(); disable(); turnGreen(1);">Lesson 1</a>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-               <br>
-            </div>
-            <div class="column">
-               <h3>Basic HTML/CSS</h3>
-               <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 1.html" class="changeGreen"
-                  onclick="lessonClick(); disable(); turnGreen(2);"
-                  onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 1</a>
-               <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 2.html" class="changeGreen"
-                  onclick="lessonClick(); disable(); turnGreen(3);"
-                  onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 2</a>
-               <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 3.html" class="changeGreen"
-                  onclick="lessonClick(); disable(); turnGreen(4);"
-                  onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 3</a>
-               <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 4.html" class="changeGreen"
-                  onclick="lessonClick(); disable(); turnGreen(5);"
-                  onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 4</a>
-               <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 5.html" class="changeGreen"
-                  onclick="lessonClick(); disable(); turnGreen(6);"
-                  onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 5</a>
-
-            </div>
-            <div class="column">
-               <h3>Basic Javascript</h3>
-               <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 1.html" class="changeGreen"
-                  onclick="turnGreen(7); lessonClick(); disable();"
-                  onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 1</a>
-               <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 2.html" class="changeGreen"
-                  onclick="turnGreen(8); lessonClick(); disable();"
-                  onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 2</a>
-               <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 3.html" class="changeGreen"
-                  onclick="turnGreen(9); lessonClick(); disable();"
-                  onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 3</a>
-               <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 4.html" class="changeGreen"
-                  onclick="turnGreen(10); lessonClick(); disable();"
-                  onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 4</a>
-               <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 5.html" class="changeGreen"
-                  onclick="turnGreen(11); lessonClick(); disable();"
-                  onClick="myTimer = setInterval(myCounter, 1000); disable() ">Lesson 5</a>
-            </div>
-         </div>
-
-      </div>
-   </div>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   
-   <button onclick="lessonClick(); disable()" id="disable">Start counter!</button>
-   <button onClick="doneCounting()" id="stop" disabled>Stop counter!</button>
-   <br>
-   <br>
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
 
 </body>
-
 </html>
