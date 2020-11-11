@@ -1,6 +1,24 @@
 <html>
     <style>
     body{text-align: center;}
+    body, html {
+  height: 150%;
+  margin: 0;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("code.jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+h3{color: white;}
    
     
     </style>
@@ -11,12 +29,44 @@
    }
    </script>
 </head>
-<body>
+<body class="bg">
   
     <iframe width="741" height="473" src="https://www.youtube.com/embed/2ACrHs5o9LM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
    <br>
    <br>
     <button onclick="location.href='HTML Lesson 3 Test.html'">Finished Lesson</button>
 </iframe>
+<title> Realtime IDE </title>
+<head>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.js">
+  </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+
+  let socket = io('http://localhost:3000');
+  console.log('here');
+  const log = console.log;
+
+
+  const ide = document.getElementById("ide");
+  ide.addEventListener('keyup' , (evt) => {
+    const code = ide.value;
+    socket.send(code);
+  });
+
+  socket.on('message', (data) => {
+    ide.value = data;
+    log(ide.value);
+  });
+});
+  </script>
+</head>
+  <body>
+    <h3>Realtime
+    </h3>
+    <div>
+    <textarea rows="30" cols="100" id="ide" style="background-color: dimgray; color: white" placeholder="Type your code here..."></textarea>
+    </div>
 </body>
 </html>
