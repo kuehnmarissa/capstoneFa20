@@ -4,6 +4,7 @@ let code = `function foo(items) {
     var x = "All this is syntax highlighted";
     return x;
 }`;
+let compiledCode;
 const express = require('express');
 const port = 3000;
 
@@ -29,8 +30,12 @@ io.on('connection', (socket) => {
     log('Successful  connection...');
     socket.emit('message', code);
     socket.on('message', (evt) => {
+      log("id:" + socket.id);
       code = evt;
+      log(code);
       socket.broadcast.emit('message', evt)
+      compiledCode = eval(code);
+      log(compiledCode);
     });
 });
 
