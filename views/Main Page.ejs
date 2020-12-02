@@ -1,6 +1,6 @@
 
 <html>
-        
+
 <title>habit;</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-   
+
 
 .dropdown {
   position: relative;
@@ -40,12 +40,12 @@
 
 
     #title{ font-size: 50px;
-    
+
     }
     #result{font-weight: bold;}
 
 #img {
-    
+
       visibility: hidden;
    }
 
@@ -76,22 +76,22 @@ img{ width: 100%;
   }
 </style>
 <body>
-       
-  
+
+
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-theme w3-top w3-left-align w3-large" >
     <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-   
+
     <a target="_blank" rel="noopener noreferrer" href="Lesson 1 Page.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white changeGreen" onclick="lessonClick(); disable(); turnGreen(0);">Getting Started with Github</a>
-   
+
     <a target="_blank" rel="noopener noreferrer" href="Lesson 2 Page.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white changeGreen" onclick="lessonClick(); disable(); turnGreen(1);">Choosing An IDE</a>
      <div class="dropdown"></div>
     <a href="#" onclick="myFunction()" class="w3-bar-item w3-button w3-hide-small w3-hover-white dropbtn dropdown">Basic HTML & CSS</a>
     <a href="#" onclick="myFunction2()" class="w3-bar-item w3-button w3-hide-small w3-hover-white dropbtn dropdown">Basic Javascript</a>
       <a  class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white"  onclick="location.href='Begin Page.html'" id="signOut" style="position: fixed; right: 1.5vw; ">Sign Out</a>
          </div>
-    
+
 
   </div>
 </div>
@@ -115,7 +115,7 @@ img{ width: 100%;
       </div>
 
       <div id="myDropdown2" class="dropdown-content" style="position: relative">
-    
+
             <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 1.html" class="changeGreen"
             onclick="turnGreen(7); lessonClick(); disable();"
             onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 1</a>
@@ -131,15 +131,15 @@ img{ width: 100%;
          <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 5.html" class="changeGreen"
             onclick="turnGreen(11); lessonClick(); disable();"
             onClick="myTimer = setInterval(myCounter, 1000); disable() ">Lesson 5</a>
-    
-    
+
+
     </div>
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
 <div class="w3-main" style="margin-left:250px">
-     
+
   <div class="w3-row w3-padding-64">
     <div class="w3-twothird w3-container">
       <h1 class="w3-text-teal">WELCOME TO habit;!</h1>
@@ -163,7 +163,7 @@ img{ width: 100%;
          <h1 id="title">habit;</h1>
       <img class="w3-border w3-padding-large w3-padding-32 w3-center" src="logo.png"/>
     <p></p>
-   
+
     </div>
   </div>
 
@@ -175,7 +175,7 @@ img{ width: 100%;
       <li>Lessons from experienced computer programmers.</li>
       <li>Tests to review each lesson.</li>
       <li>A minute tracker to count how many minutes you have coded. Whether on site, or on your own!</li>
-      
+
 
 
      </ul>
@@ -192,17 +192,17 @@ img{ width: 100%;
             <br>
         <h3>Your Awards:</h3>
       <img class="w3-border w3-padding-large w3-padding-32 w3-center" src="award.png" id="img"/>
-      
-      
+
+
     </div>
   </div>
 
-  
 
 
-  
 
-  
+
+
+
 
 <!-- END MAIN -->
 </div>
