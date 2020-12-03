@@ -1,32 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Live IDE</title>
-<style type="text/css" media="screen">
-    #editor {
-        position: absolute;
-        top: 40px;
-        right: 0;
-        bottom: 0;
-        left: 0;
-    }
-</style>
-</head>
-<body>
-<div>
-<select id='language'>
-  <option value='ace/mode/javascript' selected>Javascript</option>
-  <option value='ace/mode/html'>HTML</option>
-  <option value='ace/mode/java'>Java</option>
-</select>
-</div>
-<div id="editor" width='500' height='500'></div>
-</body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" type="text/javascript" charset="utf-8">
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.js">
-</script>
-<script>
 document.addEventListener('DOMContentLoaded', function () {
     let selector = document.getElementById('language');
     let language = selector.value;
@@ -70,6 +41,3 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
-</script>
-
-</html>
