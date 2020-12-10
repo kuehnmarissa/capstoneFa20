@@ -1,56 +1,71 @@
-
 <html>
-        
-  <title>habit;</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-     
-  
+
+<title>habit;</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
   .dropdown {
     position: relative;
     display: inline-block;
   }
-  
+
   .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
     min-width: 160px;
     overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
   }
-  
+
   .dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
   }
-  
-  .dropdown a:hover {background-color: #ddd;}
-  
-  .show {display: block;}
-  
-  
-  
-      #title{ font-size: 50px;
-      
-      }
-      #result{font-weight: bold;}
-  
+
+  .dropdown a:hover {
+    background-color: #ddd;
+  }
+
+  .show {
+    display: block;
+  }
+
+
+
+  #title {
+    font-size: 50px;
+
+  }
+
+  #result {
+    font-weight: bold;
+  }
+
   #img {
-      
-        visibility: hidden;
-     }
-  
-  
-  html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+
+    visibility: hidden;
+  }
+
+
+  html,
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Roboto", sans-serif;
+  }
+
   .w3-sidebar {
     z-index: 3;
     width: 250px;
@@ -58,115 +73,139 @@
     bottom: 0;
     height: inherit;
   }
-  img{ width: 100%;
-    height: auto;}
-    h1, h2, h3, h4, p{
-        text-align: center;
-        font-family: 'Courier New';
-    }
-  
-    li{font-family: 'Courier New';}
-  
-    .w3-third{background-color: teal;}
-    #line{
-   font-weight: bold;
-   color: teal;
-  
-  
-    }
-    #streakImage{
-      width: 20%;
-      height: auto;
-    }
 
-    #myDiv {
-  border: 1px outset black;
-  background-color: teal;    
-  text-align: center;
-  height: 400px;
-  width: 250px;
-  margin-left: -265; 
-  float: left;
-  position: absolute;
-  overflow: scroll;
-}
+  img {
+    width: 100%;
+    height: auto;
+  }
 
-h4 {
- 
-  margin-left: -920; 
-}
-  </style>
-  <body>
- 
-    
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    text-align: center;
+    font-family: 'Courier New';
+  }
+
+  li {
+    font-family: 'Courier New';
+  }
+
+  .w3-third {
+    background-color: teal;
+  }
+
+  #line {
+    font-weight: bold;
+    color: teal;
+
+
+  }
+
+  #streakImage {
+    width: 20%;
+    height: auto;
+  }
+
+  #myDiv {
+    border: 1px outset black;
+    background-color: teal;
+    text-align: center;
+    height: 400px;
+    width: 250px;
+    margin-left: -265;
+    float: left;
+    position: absolute;
+    overflow: scroll;
+  }
+
+  h4 {
+
+    margin-left: -920;
+  }
+</style>
+
+<body>
+
+
   <!-- Navbar -->
   <div class="w3-top">
-    <div class="w3-bar w3-theme w3-top w3-left-align w3-large" >
-      <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-     
-      <a target="_blank" rel="noopener noreferrer" href="Lesson 1 Page.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white changeGreen" onclick="lessonClick(); disable(); turnGreen(0);">Getting Started with Github</a>
-     
-      <a target="_blank" rel="noopener noreferrer" href="Lesson 2 Page.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white changeGreen" onclick="lessonClick(); disable(); turnGreen(1);">Choosing An IDE</a>
-       <div class="dropdown"></div>
-      <a href="#" onclick="myFunction()" class="w3-bar-item w3-button w3-hide-small w3-hover-white dropbtn dropdown">Basic HTML & CSS</a>
-      <a href="#" onclick="myFunction2()" class="w3-bar-item w3-button w3-hide-small w3-hover-white dropbtn dropdown">Basic Javascript</a>
-     <a class="w3-bar-item">Streak:</a>
-       <img id="streakImage" class="w3-bar-item" />
-        <a  class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white"  onclick="location.href='Begin Page.html'" id="signOut" style="position: fixed; right: 1.5vw; ">Sign Out</a>
-           </div>
-      
-  
+    <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+      <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1"
+        href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+
+      <a target="_blank" rel="noopener noreferrer" href="Lesson 1 Page.html"
+        class="w3-bar-item w3-button w3-hide-small w3-hover-white changeGreen"
+        onclick="lessonClick(); disable(); turnGreen(0);">Getting Started with Github</a>
+
+      <a target="_blank" rel="noopener noreferrer" href="Lesson 2 Page.html"
+        class="w3-bar-item w3-button w3-hide-small w3-hover-white changeGreen"
+        onclick="lessonClick(); disable(); turnGreen(1);">Choosing An IDE</a>
+      <div class="dropdown"></div>
+      <a href="#" onclick="myFunction()"
+        class="w3-bar-item w3-button w3-hide-small w3-hover-white dropbtn dropdown">Basic HTML & CSS</a>
+      <a href="#" onclick="myFunction2()"
+        class="w3-bar-item w3-button w3-hide-small w3-hover-white dropbtn dropdown">Basic Javascript</a>
+      <a class="w3-bar-item">Streak:</a>
+      <img id="streakImage" class="w3-bar-item" />
+      <a class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white"
+        onclick="location.href='Begin Page.html'" id="signOut" style="position: fixed; right: 1.5vw; ">Sign Out</a>
     </div>
+
+
   </div>
-  
+  </div>
+
   <div id="myDropdown" class="dropdown-content" style="position: relative">
-          <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 1.html" class="changeGreen"
-                    onclick="lessonClick(); disable(); turnGreen(2);"
-                    onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 1</a>
-                    <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 2.html" class="changeGreen"
-                    onclick="lessonClick(); disable(); turnGreen(3);"
-                    onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 2</a>
-                 <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 3.html" class="changeGreen"
-                    onclick="lessonClick(); disable(); turnGreen(4);"
-                    onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 3</a>
-                 <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 4.html" class="changeGreen"
-                    onclick="lessonClick(); disable(); turnGreen(5);"
-                    onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 4</a>
-                 <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 5.html" class="changeGreen"
-                    onclick="lessonClick(); disable(); turnGreen(6);"
-                    onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 5</a>
-        </div>
-  
-        <div id="myDropdown2" class="dropdown-content" style="position: relative">
-      
-              <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 1.html" class="changeGreen"
-              onclick="turnGreen(7); lessonClick(); disable();"
-              onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 1</a>
-           <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 2.html" class="changeGreen"
-              onclick="turnGreen(8); lessonClick(); disable();"
-              onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 2</a>
-           <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 3.html" class="changeGreen"
-              onclick="turnGreen(9); lessonClick(); disable();"
-              onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 3</a>
-           <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 4.html" class="changeGreen"
-              onclick="turnGreen(10); lessonClick(); disable();"
-              onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 4</a>
-           <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 5.html" class="changeGreen"
-              onclick="turnGreen(11); lessonClick(); disable();"
-              onClick="myTimer = setInterval(myCounter, 1000); disable() ">Lesson 5</a>
-      
-      
-      </div>
+    <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 1.html" class="changeGreen"
+      onclick="lessonClick(); disable(); turnGreen(2);"
+      onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 1</a>
+    <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 2.html" class="changeGreen"
+      onclick="lessonClick(); disable(); turnGreen(3);"
+      onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 2</a>
+    <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 3.html" class="changeGreen"
+      onclick="lessonClick(); disable(); turnGreen(4);"
+      onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 3</a>
+    <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 4.html" class="changeGreen"
+      onclick="lessonClick(); disable(); turnGreen(5);"
+      onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 4</a>
+    <a target="_blank" rel="noopener noreferrer" href="HTML Lesson 5.html" class="changeGreen"
+      onclick="lessonClick(); disable(); turnGreen(6);"
+      onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 5</a>
+  </div>
+
+  <div id="myDropdown2" class="dropdown-content" style="position: relative">
+
+    <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 1.html" class="changeGreen"
+      onclick="turnGreen(7); lessonClick(); disable();"
+      onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 1</a>
+    <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 2.html" class="changeGreen"
+      onclick="turnGreen(8); lessonClick(); disable();"
+      onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 2</a>
+    <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 3.html" class="changeGreen"
+      onclick="turnGreen(9); lessonClick(); disable();"
+      onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 3</a>
+    <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 4.html" class="changeGreen"
+      onclick="turnGreen(10); lessonClick(); disable();"
+      onClick="myTimer = setInterval(myCounter, 1000 * 60); disable()">Lesson 4</a>
+    <a target="_blank" rel="noopener noreferrer" href="Javascript Lesson 5.html" class="changeGreen"
+      onclick="turnGreen(11); lessonClick(); disable();"
+      onClick="myTimer = setInterval(myCounter, 1000); disable() ">Lesson 5</a>
+
+
+  </div>
   <!-- Overlay effect when opening sidebar on small screens -->
-  <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-  
+  <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
+    id="myOverlay"></div>
+
   <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
   <div class="w3-main" style="margin-left:250px">
-       
+
     <div class="w3-row w3-padding-64">
       <div class="w3-twothird w3-container">
         <h4>User Score Board:</h4>
-          <div id="myDiv"></div> 
+        <div id="myDiv"></div>
         <h1 class="w3-text-teal">WELCOME TO habit;!</h1>
         <h3>What does habit; do? habit; is:</h3>
         <ul>
@@ -174,316 +213,316 @@ h4 {
           <li>Keeps track of how much you code each day</li>
           <li>Gives you awards and goals to set to make programming more fun.</li>
           <li>Provides you with the proper tools to start your programming journey!</li>
-          
-  
+
+
         </ul>
         <br>
         <br>
         <br>
         <br>
         <br>
-        
-      <p id="line">__________________________________________________________________</p>
+
+        <p id="line">__________________________________________________________________</p>
       </div>
       <div class="w3-third w3-container">
-           <h1 id="title">habit;</h1>
-        <img class="w3-border w3-padding-large w3-padding-32 w3-center" src="logo.png"/>
-      <p></p>
-      <h3 id="username"></h3>
+        <h1 id="title">habit;</h1>
+        <img class="w3-border w3-padding-large w3-padding-32 w3-center" src="logo.png" />
+        <p></p>
+        <h3 id="username"></h3>
       </div>
     </div>
-  
+
     <div class="w3-row">
       <div class="w3-twothird w3-container">
         <h1 class="w3-text-teal">How does habit; work?</h1>
-       <h3>habit; provides you with:</h3>
-       <ul>
-        <li>Lessons from experienced computer programmers.</li>
-        <li>Tests to review each lesson.</li>
-        <li>A minute tracker to count how many minutes you have coded. Whether on site, or on your own!</li>
-        
-  
-  
-       </ul>
+        <h3>habit; provides you with:</h3>
+        <ul>
+          <li>Lessons from experienced computer programmers.</li>
+          <li>Tests to review each lesson.</li>
+          <li>A minute tracker to count how many minutes you have coded. Whether on site, or on your own!</li>
+
+
+
+        </ul>
       </div>
       <div class="w3-third w3-container">
-          <h2>TIMER FUNCTION:</h2>
-              <h3 id="result"></h3>
-              <input type="text" id="demo" value="0" style="background-color: snow; color: red; font-weight: bolder; width:69%"
-              disabled>
-              <button onclick="lessonClick(); disable()" id="disable">Start counter!</button>
-     <button onClick="doneCounting()" id="stop" disabled>Stop counter!</button>
-              <h3 id="todayTime"></h3>
-              <br>
-              <br>
-          <h3>Your Awards:</h3>
-        <img class="w3-border w3-padding-large w3-padding-32 w3-center" src="award.png" id="img"/>
-        
-        
+        <h2>TIMER FUNCTION:</h2>
+        <h3 id="result"></h3>
+        <input type="text" id="demo" value="0"
+          style="background-color: snow; color: red; font-weight: bolder; width:69%" disabled>
+        <button onclick="lessonClick(); disable()" id="disable">Start counter!</button>
+        <button onClick="doneCounting()" id="stop" disabled>Stop counter!</button>
+        <h3 id="todayTime"></h3>
+        <br>
+        <br>
+        <h3>Your Awards:</h3>
+        <img class="w3-border w3-padding-large w3-padding-32 w3-center" src="award.png" id="img" />
+
+
       </div>
     </div>
-  
-    
-  
-  
-    
-  
-    
-  
-  <!-- END MAIN -->
+
+
+
+
+
+
+
+
+    <!-- END MAIN -->
   </div>
-  
-  
-  
+
+
+
   <script>
 
-var n = localStorage.getItem('on_load_counter');
- 
-if (n === null) {
-    n = -1;
-}
- 
-n++;
- 
-localStorage.setItem("on_load_counter", n);
- 
+    var n = localStorage.getItem('on_load_counter');
 
-if (n === 1){
-  document.getElementById('streakImage').src='Streak 1.jpg';
-}
-
-if (n === 2){
-  document.getElementById('streakImage').src='Streak 2.jpg';
-}
-
-if (n === 3){
-  document.getElementById('streakImage').src='Streak 3.jpg';
-}
-if (n === 4){
-  document.getElementById('streakImage').src='Streak 4.jpg';
-}
-
-if (n === 5){
-  document.getElementById('streakImage').src='Streak 5.jpg';
-}
-if (n === 6){
-  document.getElementById('streakImage').src='Streak 6.jpg';
-}
-if (n >= 7){
-  document.getElementById('streakImage').src='Streak 7.jpg';
-}
-
-
-      var local = localStorage.getItem("userInput");
-      
-      if(local == null){
-
-        var username = prompt("Please enter Username");
-       if(username === null || username === "null" || username === ""){
-          username = "The Unknown Player";
-       }
-        localStorage.setItem("userInput", username);
-        
-  
-  }
-  
-      
-  
-
-    
-  
-  
-  
-  
-  
-
-  
-  // Get the Sidebar
-  var mySidebar = document.getElementById("mySidebar");
-  
-  // Get the DIV with overlay effect
-  var overlayBg = document.getElementById("myOverlay");
-  
-  // Toggle between showing and hiding the sidebar, and add overlay effect
-  function w3_open() {
-    if (mySidebar.style.display === 'block') {
-      mySidebar.style.display = 'none';
-      overlayBg.style.display = "none";
-    } else {
-      mySidebar.style.display = 'block';
-      overlayBg.style.display = "block";
+    if (n === null) {
+      n = -1;
     }
-  }
-  
-  // Close the sidebar with the close button
-  function w3_close() {
-    mySidebar.style.display = "none";
-    overlayBg.style.display = "none";
-  }
-  
-  
-  
-  
-  
-  
-  
-  window.onload = function () {
-  
-    
-          
-    document.getElementById("myDiv").innerHTML = localStorage.getItem("tabelaContent");
-           var x = localStorage.getItem("mytimes");
-           var tempObject = JSON.parse(x);
-           timesarray = tempObject && tempObject.timesarray ? tempObject.timesarray : [];
-           Caculate();
-        
-        }
-        var q = 0;
-  
-        function turnGreen(i) {
-  
-  
-           document.getElementsByClassName("changeGreen")[i].style.backgroundColor = "green";
-  
-  
-  
-  
-        }
-  
-  
-  
-  
-  
-  
-  
-        var timesarray = [];
-        
-        function Caculate() {
-          var sum = 0;
-         
-           for (var i = 0; i < timesarray.length; i++) {
-              sum = sum + parseInt(timesarray[i]);
-              console.log(sum);
-           }
-           document.getElementById("result").innerHTML = "total time coding: " + sum;
-           if (sum > 0) {
-             
-              var reward = document.getElementById("img").style.visibility = "visible";
-             
-    
-           };
-          
-          var tryItOut = document.getElementById("username").innerHTML = local + " Score: " + sum;
-          var roster = document.createElement("LI");
-          var textnode = document.createTextNode(tryItOut);
-          roster.appendChild(textnode);
-              var leaderboard = document.getElementById("myDiv").appendChild(roster);
-              var tabelaContent = document.getElementById("myDiv").innerHTML;
-            
+
+    n++;
+
+    localStorage.setItem("on_load_counter", n);
 
 
-          var display = document.getElementById("username").innerHTML;
+    if (n === 1) {
+      document.getElementById('streakImage').src = 'Streak 1.jpg';
+    }
 
-          if(display.match(/null/g)){
-            window.location.reload();
-          }
-         
-          if(tabelaContent.match(/null/g)){
+    if (n === 2) {
+      document.getElementById('streakImage').src = 'Streak 2.jpg';
+    }
+
+    if (n === 3) {
+      document.getElementById('streakImage').src = 'Streak 3.jpg';
+    }
+    if (n === 4) {
+      document.getElementById('streakImage').src = 'Streak 4.jpg';
+    }
+
+    if (n === 5) {
+      document.getElementById('streakImage').src = 'Streak 5.jpg';
+    }
+    if (n === 6) {
+      document.getElementById('streakImage').src = 'Streak 6.jpg';
+    }
+    if (n >= 7) {
+      document.getElementById('streakImage').src = 'Streak 7.jpg';
+    }
+
+
+    var local = localStorage.getItem("userInput");
+
+    if (local == null) {
+
+      var username = prompt("Please enter Username");
+      if (username === null || username === "null" || username === "") {
+        username = "The Unknown Player";
+      }
+      localStorage.setItem("userInput", username);
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    // Get the Sidebar
+    var mySidebar = document.getElementById("mySidebar");
+
+    // Get the DIV with overlay effect
+    var overlayBg = document.getElementById("myOverlay");
+
+    // Toggle between showing and hiding the sidebar, and add overlay effect
+    function w3_open() {
+      if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+      } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+      }
+    }
+
+    // Close the sidebar with the close button
+    function w3_close() {
+      mySidebar.style.display = "none";
+      overlayBg.style.display = "none";
+    }
+
+
+
+
+
+
+
+    window.onload = function () {
+
+
+
+      document.getElementById("myDiv").innerHTML = localStorage.getItem("tabelaContent");
+      var x = localStorage.getItem("mytimes");
+      var tempObject = JSON.parse(x);
+      timesarray = tempObject && tempObject.timesarray ? tempObject.timesarray : [];
+      Caculate();
+
+    }
+    var q = 0;
+
+    function turnGreen(i) {
+
+
+      document.getElementsByClassName("changeGreen")[i].style.backgroundColor = "green";
+
+
+
+
+    }
+
+
+
+
+
+
+
+    var timesarray = [];
+
+    function Caculate() {
+      var sum = 0;
+
+      for (var i = 0; i < timesarray.length; i++) {
+        sum = sum + parseInt(timesarray[i]);
+        console.log(sum);
+      }
+      document.getElementById("result").innerHTML = "total time coding: " + sum;
+      if (sum > 0) {
+
+        var reward = document.getElementById("img").style.visibility = "visible";
+
+
+      };
+
+      var tryItOut = document.getElementById("username").innerHTML = local + " Score: " + sum;
+      var roster = document.createElement("LI");
+      var textnode = document.createTextNode(tryItOut);
+      roster.appendChild(textnode);
+      var leaderboard = document.getElementById("myDiv").appendChild(roster);
+      var tabelaContent = document.getElementById("myDiv").innerHTML;
+
+
+
+      var display = document.getElementById("username").innerHTML;
+
+      if (display.match(/null/g)) {
+        window.location.reload();
+      }
+
+      if (tabelaContent.match(/null/g)) {
         textnode.replace("null", username);
 
+      }
+      localStorage.setItem("tabelaContent", tabelaContent);
+
+
+
+
+
+
+
+    }
+
+
+    var c = 0;
+
+
+
+
+
+    function disable() {
+      document.getElementById("disable").disabled = true;
+      document.getElementById("stop").disabled = false;
+    }
+    function myCounter() {
+      var hey = document.getElementById("demo").value = ++c;
+      var tryitout = document.getElementById("result").innerHTML;
+      if (c === 1 && tryitout.match(/0/g)) {
+        alert("You have clocked your first minute of Coding, here is the starting award!");
+        var reward = document.getElementById("img").style.visibility = "visible";
+
+
+      };
+    }
+
+    function doneCounting() {
+      clearInterval(myTimer);
+
+      var heyo = document.getElementById("demo").value;
+
+      document.getElementById("disable").disabled = false;
+      document.getElementById("stop").disabled = true;
+
+      timesarray.push(heyo);
+      var tempObject = { timesarray: timesarray };
+      localStorage.setItem("mytimes", JSON.stringify(tempObject));
+
+      Caculate();
+
+
+      c = 0;
+      document.getElementById("demo").value = 0;
+
+
+
+
+
+
+
+    }
+
+
+    function lessonClick() {
+
+      myTimer = setInterval(myCounter, 1000);
+
+    }
+
+
+
+
+
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    function myFunction2() {
+      document.getElementById("myDropdown2").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
           }
-          localStorage.setItem("tabelaContent",tabelaContent);
-
-          
-
-         
-          
-        
- 
-        }
-  
-  
-        var c = 0;
-  
-  
-  
-  
-  
-        function disable() {
-           document.getElementById("disable").disabled = true;
-           document.getElementById("stop").disabled = false;
-        }
-        function myCounter() {
-           var hey = document.getElementById("demo").value = ++c;
-           var tryitout = document.getElementById("result").innerHTML;
-           if (c === 1 && tryitout.match(/0/g)) {
-              alert("You have clocked your first minute of Coding, here is the starting award!");
-              var reward = document.getElementById("img").style.visibility = "visible";
-           
-    
-           };
-        }
-  
-        function doneCounting() {
-           clearInterval(myTimer);
-  
-           var heyo = document.getElementById("demo").value;
-  
-           document.getElementById("disable").disabled = false;
-           document.getElementById("stop").disabled = true;
-  
-           timesarray.push(heyo);
-           var tempObject = { timesarray: timesarray };
-           localStorage.setItem("mytimes", JSON.stringify(tempObject));
-  
-           Caculate();
-  
-  
-           c = 0;
-           document.getElementById("demo").value = 0;
-  
-  
-  
-  
-  
-  
-  
-        }
-  
-  
-        function lessonClick() {
-  
-           myTimer = setInterval(myCounter, 1000);
-  
-        }
-  
-  
-  
-  
-  
-        function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-  }
-  function myFunction2() {
-    document.getElementById("myDropdown2").classList.toggle("show");
-  }
-  
-  // Close the dropdown if the user clicks outside of it
-  window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
         }
       }
     }
-  }
-  
+
   </script>
-  
-  </body>
-  </html>
-  
+
+</body>
+
+</html>
