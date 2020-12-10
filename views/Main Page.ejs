@@ -60,7 +60,7 @@
   }
   img{ width: 100%;
     height: auto;}
-    h1, h2, h3, p{
+    h1, h2, h3, h4, p{
         text-align: center;
         font-family: 'Courier New';
     }
@@ -74,9 +74,30 @@
   
   
     }
+    #streakImage{
+      width: 20%;
+      height: auto;
+    }
+
+    #myDiv {
+  border: 1px outset black;
+  background-color: teal;    
+  text-align: center;
+  height: 400px;
+  width: 250px;
+  margin-left: -265; 
+  float: left;
+  position: absolute;
+  overflow: scroll;
+}
+
+h4 {
+ 
+  margin-left: -920; 
+}
   </style>
   <body>
-         
+ 
     
   <!-- Navbar -->
   <div class="w3-top">
@@ -89,6 +110,8 @@
        <div class="dropdown"></div>
       <a href="#" onclick="myFunction()" class="w3-bar-item w3-button w3-hide-small w3-hover-white dropbtn dropdown">Basic HTML & CSS</a>
       <a href="#" onclick="myFunction2()" class="w3-bar-item w3-button w3-hide-small w3-hover-white dropbtn dropdown">Basic Javascript</a>
+     <a class="w3-bar-item">Streak:</a>
+       <img id="streakImage" class="w3-bar-item" />
         <a  class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white"  onclick="location.href='Begin Page.html'" id="signOut" style="position: fixed; right: 1.5vw; ">Sign Out</a>
            </div>
       
@@ -142,6 +165,8 @@
        
     <div class="w3-row w3-padding-64">
       <div class="w3-twothird w3-container">
+        <h4>User Score Board:</h4>
+          <div id="myDiv"></div> 
         <h1 class="w3-text-teal">WELCOME TO habit;!</h1>
         <h3>What does habit; do? habit; is:</h3>
         <ul>
@@ -149,7 +174,7 @@
           <li>Keeps track of how much you code each day</li>
           <li>Gives you awards and goals to set to make programming more fun.</li>
           <li>Provides you with the proper tools to start your programming journey!</li>
-  
+          
   
         </ul>
         <br>
@@ -157,6 +182,7 @@
         <br>
         <br>
         <br>
+        
       <p id="line">__________________________________________________________________</p>
       </div>
       <div class="w3-third w3-container">
@@ -183,7 +209,7 @@
       <div class="w3-third w3-container">
           <h2>TIMER FUNCTION:</h2>
               <h3 id="result"></h3>
-              <input type="text" id="demo" value="0" style="background-color: snow; color: red; font-weight: bolder; width:75vw"
+              <input type="text" id="demo" value="0" style="background-color: snow; color: red; font-weight: bolder; width:69%"
               disabled>
               <button onclick="lessonClick(); disable()" id="disable">Start counter!</button>
      <button onClick="doneCounting()" id="stop" disabled>Stop counter!</button>
@@ -210,23 +236,67 @@
   
   
   <script>
+
+var n = localStorage.getItem('on_load_counter');
+ 
+if (n === null) {
+    n = -1;
+}
+ 
+n++;
+ 
+localStorage.setItem("on_load_counter", n);
+ 
+
+if (n === 1){
+  document.getElementById('streakImage').src='Streak 1.jpg';
+}
+
+if (n === 2){
+  document.getElementById('streakImage').src='Streak 2.jpg';
+}
+
+if (n === 3){
+  document.getElementById('streakImage').src='Streak 3.jpg';
+}
+if (n === 4){
+  document.getElementById('streakImage').src='Streak 4.jpg';
+}
+
+if (n === 5){
+  document.getElementById('streakImage').src='Streak 5.jpg';
+}
+if (n === 6){
+  document.getElementById('streakImage').src='Streak 6.jpg';
+}
+if (n >= 7){
+  document.getElementById('streakImage').src='Streak 7.jpg';
+}
+
+
       var local = localStorage.getItem("userInput");
       
       if(local == null){
+
         var username = prompt("Please enter Username");
+       if(username === null || username === "null" || username === ""){
+          username = "The Unknown Player";
+       }
         localStorage.setItem("userInput", username);
+        
   
   }
   
       
   
+
+    
   
   
   
   
   
-  
-  
+
   
   // Get the Sidebar
   var mySidebar = document.getElementById("mySidebar");
@@ -260,8 +330,8 @@
   window.onload = function () {
   
     
-    
-   
+          
+    document.getElementById("myDiv").innerHTML = localStorage.getItem("tabelaContent");
            var x = localStorage.getItem("mytimes");
            var tempObject = JSON.parse(x);
            timesarray = tempObject && tempObject.timesarray ? tempObject.timesarray : [];
@@ -303,14 +373,33 @@
     
            };
           
-          document.getElementById("username").innerHTML = local + " Score: " + sum;
+          var tryItOut = document.getElementById("username").innerHTML = local + " Score: " + sum;
+          var roster = document.createElement("LI");
+          var textnode = document.createTextNode(tryItOut);
+          roster.appendChild(textnode);
+              var leaderboard = document.getElementById("myDiv").appendChild(roster);
+              var tabelaContent = document.getElementById("myDiv").innerHTML;
+            
+
+
           var display = document.getElementById("username").innerHTML;
-         
+
           if(display.match(/null/g)){
             window.location.reload();
           }
          
+          if(tabelaContent.match(/null/g)){
+        textnode.replace("null", username);
+
+          }
+          localStorage.setItem("tabelaContent",tabelaContent);
+
           
+
+         
+          
+        
+ 
         }
   
   
@@ -364,7 +453,7 @@
   
         function lessonClick() {
   
-           myTimer = setInterval(myCounter, 1000 * 60);
+           myTimer = setInterval(myCounter, 1000);
   
         }
   
