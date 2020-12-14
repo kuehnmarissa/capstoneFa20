@@ -8,6 +8,11 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+  #dived{text-align: center;}
+  button {
+    text-align: center;
+  }
+
   .dropdown {
     position: relative;
     display: inline-block;
@@ -224,11 +229,20 @@
 
         <p id="line">__________________________________________________________________</p>
       </div>
-      <div class="w3-third w3-container">
+      <div class="w3-third w3-container" id="dived">
         <h1 id="title">habit;</h1>
-        <img class="w3-border w3-padding-large w3-padding-32 w3-center" src="logo.png" />
+        <img id="logo" class="w3-border w3-padding-large w3-padding-32 w3-center" src="logo.png" />
         <p></p>
         <h3 id="username"></h3>
+        <button onclick="reward()" id="reward1" disabled>Beanie</button>
+        <button onclick="reward2()" id="reward2" disabled>Cowboy</button>
+        <button onclick="reward3()" id="reward3" disabled>Halo</button>
+        <button onclick="reward4()" id="reward4" disabled>Kid</button>
+        <br>
+        <button onclick="reward5()" id="reward5" disabled>Pirate</button>
+        <button onclick="reward6()" id="reward6" disabled>Santa</button>
+        <button onclick="reward7()" id="reward7" disabled>Top Hat</button>
+        <button onclick="reward8()" id="reward8" disabled>Wizard</button>
       </div>
     </div>
 
@@ -275,6 +289,41 @@
 
 
   <script>
+
+
+
+
+    function reward(){
+      document.getElementById("logo").src = "beanie.png";
+    }
+
+    function reward2(){
+      document.getElementById("logo").src = "cowboy.png";
+    }
+
+    function reward3(){
+      document.getElementById("logo").src = "halo.png";
+    }
+
+    function reward4(){
+      document.getElementById("logo").src = "kid.png";
+    }
+
+    function reward5(){
+      document.getElementById("logo").src = "pirate.png";
+    }
+
+    function reward6(){
+      document.getElementById("logo").src = "santa.png";
+    }
+
+    function reward7(){
+      document.getElementById("logo").src = "tophat.png";
+    }
+
+    function reward8(){
+      document.getElementById("logo").src = "wizard.png";
+    }
 
     var n = localStorage.getItem('on_load_counter');
 
@@ -369,7 +418,45 @@
     window.onload = function () {
 
 
+      var checkup = localStorage.getItem("reward1");
+      if(checkup === "false"){
+        document.getElementById("reward1").disabled = false;
+      }
 
+      var checkup2 = localStorage.getItem("reward2");
+      if(checkup2 === "false"){
+        document.getElementById("reward2").disabled = false;
+      }
+
+      var checkup3 = localStorage.getItem("reward3");
+      if(checkup3 === "false"){
+        document.getElementById("reward3").disabled = false;
+      }
+
+      var checkup4 = localStorage.getItem("reward4");
+      if(checkup4 === "false"){
+        document.getElementById("reward4").disabled = false;
+      }
+
+      var checkup5 = localStorage.getItem("reward5");
+      if(checkup5 === "false"){
+        document.getElementById("reward5").disabled = false;
+      }
+
+      var checkup6 = localStorage.getItem("reward6");
+      if(checkup6 === "false"){
+        document.getElementById("reward6").disabled = false;
+      }
+      
+      var checkup7 = localStorage.getItem("reward7");
+      if(checkup7 === "false"){
+        document.getElementById("reward7").disabled = false;
+      }
+
+      var checkup8 = localStorage.getItem("reward8");
+      if(checkup8 === "false"){
+        document.getElementById("reward8").disabled = false;
+      }
       document.getElementById("myDiv").innerHTML = localStorage.getItem("tabelaContent");
       var x = localStorage.getItem("mytimes");
       var tempObject = JSON.parse(x);
@@ -454,13 +541,79 @@
     }
     function myCounter() {
       var hey = document.getElementById("demo").value = ++c;
-      var tryitout = document.getElementById("result").innerHTML;
-      if (c === 1 && tryitout.match(/0/g)) {
+    var willWork = document.getElementById("result").innerHTML;
+   
+      var letsee = document.getElementById('reward1');
+      var letsee2 = document.getElementById('reward2');
+      var letsee3 = document.getElementById('reward3');
+      var letsee4 = document.getElementById('reward4');
+      var letsee5 = document.getElementById('reward5');
+      var letsee6 = document.getElementById('reward6');
+      var letsee7 = document.getElementById('reward7');
+      var letsee8 = document.getElementById('reward8');
+      if (c === 1 && willWork.match(/0/g)) {
         alert("You have clocked your first minute of Coding, here is the starting award!");
         var reward = document.getElementById("img").style.visibility = "visible";
 
 
       };
+
+      if (c === 5 && letsee.disabled) {
+    
+        alert("You have clocked 5 straight minutes of coding! You have earned the Beanie!");
+        var reward1 = document.getElementById("reward1").disabled = false;
+        localStorage.setItem("reward1", reward1);
+
+      };
+
+      if (c === 10 && letsee2.disabled) {
+        alert("You have clocked 10 straight minutes of coding! You have earned the Cowboy!");
+        var reward2 = document.getElementById("reward2").disabled = false;
+        localStorage.setItem("reward2", reward2);
+
+      };
+
+      if (c === 15 && letsee3.disabled) {
+        alert("You have clocked 15 straight minutes of coding! You have earned the Halo!");
+        var reward3 = document.getElementById("reward3").disabled = false;
+        localStorage.setItem("reward3", reward3);
+
+      };
+
+      if (c === 20 && letsee4.disabled) {
+        alert("You have clocked 20 straight minutes of coding! You have earned the Kid!");
+        var reward4 = document.getElementById("reward4").disabled = false;
+        localStorage.setItem("reward4", reward4);
+
+      };
+
+      if (c === 25 && letsee5.disabled) {
+        alert("You have clocked 25 straight minutes of coding! You have earned the Pirate!");
+        var reward5 = document.getElementById("reward5").disabled = false;
+        localStorage.setItem("reward5", reward5);
+
+      };
+
+      if (c === 30 && letsee6.disabled) {
+        alert("You have clocked 30 straight minutes of coding! You have earned the Santa!");
+        var reward6 = document.getElementById("reward6").disabled = false;
+        localStorage.setItem("reward6", reward6);
+
+      };
+
+      if (c === 35 && letsee7.disabled) {
+        alert("You have clocked 35 straight minutes of coding! You have earned the Top Hat!");
+        var reward7 = document.getElementById("reward7").disabled = false;
+        localStorage.setItem("reward7", reward7);
+
+      };
+      if (c === 40 && letsee8.disabled) {
+        alert("You have clocked 40 straight minutes of coding! You have earned the Wizard!");
+        var reward8 = document.getElementById("reward8").disabled = false;
+        localStorage.setItem("reward8", reward8);
+
+      };
+     
     }
 
     function doneCounting() {
@@ -520,6 +673,9 @@
         }
       }
     }
+    
+    
+
 
   </script>
 
