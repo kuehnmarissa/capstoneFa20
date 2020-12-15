@@ -19,6 +19,29 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.get('/', pages.getHomePage);
+app.get('/github', pages.getGithubPage);
+app.get('/htmllesson1', pages.getHTMLLesson1);
+app.get('/htmllesson2', pages.getHTMLLesson2);
+app.get('/htmllesson3', pages.getHTMLLesson3);
+app.get('/htmllesson4', pages.getHTMLLesson4);
+app.get('/htmllesson5', pages.getHTMLLesson5);
+app.get('/htmllesson1test', pages.getHTMLLesson1Test);
+app.get('/htmllesson2test', pages.getHTMLLesson2Test);
+app.get('/htmllesson3test', pages.getHTMLLesson3Test);
+app.get('/jslesson1', pages.getJSLesson1);
+app.get('/jslesson2', pages.getJSLesson2);
+app.get('/jslesson3', pages.getJSLesson3);
+app.get('/jslesson4', pages.getJSLesson4);
+app.get('/jslesson5', pages.getJSLesson5);
+app.get('/jslesson1test', pages.getJSLesson1Test);
+app.get('/jslesson2test', pages.getJSLesson2Test);
+app.get('/jslesson3test', pages.getJSLesson3Test);
+app.get('/lesson1', pages.getLesson1);
+app.get('/lesson2', pages.getLesson2);
+app.get('/lessons', pages.getLessons);
+app.get('/login', pages.getLogin);
+app.get('/newuser', pages.getNewUser);
+app.get('/timer', pages.getTimer);
 
 const io = require('socket.io')(server);
 
