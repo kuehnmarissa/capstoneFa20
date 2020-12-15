@@ -35,38 +35,76 @@ h3{color: white;}
    <br>
    <br>
     <button onclick="location.href='/jslesson2test'">Finished Lesson</button>
-</iframe>
-<title> Realtime IDE </title>
-<head>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.js">
-  </script>
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-
-  let socket = io('http://localhost:3000');
-  console.log('here');
-  const log = console.log;
-
-
-  const ide = document.getElementById("ide");
-  ide.addEventListener('keyup' , (evt) => {
-    const code = ide.value;
-    socket.send(code);
-  });
-
-  socket.on('message', (data) => {
-    ide.value = data;
-    log(ide.value);
-  });
-});
-  </script>
-</head>
-  <body>
-    <h3>Realtime
-    </h3>
-    <div>
-    <textarea rows="30" cols="100" id="ide" style="background-color: dimgray; color: white" placeholder="Type your code here..."></textarea>
-    </div>
+    <head>
+      <title>Live IDE</title>
+      <style type="text/css" media="screen">
+          #editor {
+              position: absolute;
+              top: 550px;
+              right: 0;
+              bottom: -500px;
+              left: 0;
+          }
+      </style>
+      </head>
+      <body>
+      <div>
+      <select id='language'>
+        <option value='ace/mode/javascript' selected>Javascript</option>
+        <option value='ace/mode/html'>HTML</option>
+        <option value='ace/mode/java'>Java</option>
+      </select>
+      </div>
+      <div id="editor" width='500' height='500'></div>
+      </body>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" type="text/javascript" charset="utf-8">
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.js">
+      </script>
+      <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          let selector = document.getElementById('language');
+          let language = selector.value;
+          let editor = ace.edit("editor");
+          editor.session.setMode(language);
+          const log = console.log;
+      
+          editor.setTheme("ace/theme/monokai");
+      
+      
+          selector.addEventListener('change', (evt) => {
+            //log(evt);
+            log('changed language');
+            language = selector.value;
+            editor.session.setMode(language);
+          });
+      
+      
+          let socket = io('http://localhost:3000');
+          let textarea = editor.textInput.getElement();
+      
+          /*editor.session.on('change', function(delta) {
+            let code = editor.getValue();
+            socket.send(code);
+          });*/
+      
+          textarea.addEventListener('keyup', (evt) => {
+            let code = editor.getValue();
+            console.log(socket.id);
+            socket.send(code);
+            console.log(code);
+          });
+      
+          socket.on('newDelta', (delta) => {
+            applyingChanges = true;
+            aceDocument.applyDelta(delta);
+            applyingChanges = false;
+          });
+          socket.on('message', (data) => {
+            editor.setValue(data);
+          });
+      
+      });
+      </script>
 </body>
 </html>
