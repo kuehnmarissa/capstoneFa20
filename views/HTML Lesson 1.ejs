@@ -11,7 +11,7 @@
   background-image: url("code.jpg");
 
   /* Full height */
-  height: 100%; 
+  height: 100%;
 
   /* Center and scale the image nicely */
   background-position: center;
@@ -19,7 +19,7 @@
   background-size: cover;
 }
 h3{color: white;}
-    
+
     </style>
 <head>
    <script >
@@ -29,12 +29,12 @@ h3{color: white;}
    </script>
 </head>
 <body class="bg">
-  
+
     <iframe width="806" height="453" src="https://www.youtube.com/embed/gT0Lh1eYk78?end=208" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
    <br>
    <br>
     <button onclick="location.href='/htmllesson1test'">Finished Lesson</button>
-    
+
 </iframe>
 
 
@@ -51,13 +51,7 @@ h3{color: white;}
 </style>
 </head>
 <body>
-<div>
-<select id='language'>
-  <option value='ace/mode/javascript' selected>Javascript</option>
-  <option value='ace/mode/html'>HTML</option>
-  <option value='ace/mode/java'>Java</option>
-</select>
-</div>
+  <div></div>
 <div id="editor" width='500' height='500'></div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" type="text/javascript" charset="utf-8">
@@ -66,21 +60,13 @@ h3{color: white;}
 </script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    let selector = document.getElementById('language');
-    let language = selector.value;
+    
     let editor = ace.edit("editor");
-    editor.session.setMode(language);
+    editor.session.setMode('ace/mode/html');
     const log = console.log;
 
     editor.setTheme("ace/theme/monokai");
 
-
-    selector.addEventListener('change', (evt) => {
-      //log(evt);
-      log('changed language');
-      language = selector.value;
-      editor.session.setMode(language);
-    });
 
 
     let socket = io('http://localhost:3000');
