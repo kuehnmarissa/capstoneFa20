@@ -42,7 +42,7 @@ app.get('/lessons', pages.getLessons);
 app.get('/login', pages.getLogin);
 app.get('/newuser', pages.getNewUser);
 app.get('/timer', pages.getTimer);
-
+app.get('/begin', pages.getBeginPage);
 const io = require('socket.io')(server);
 
 io.on('connection', (socket) => {

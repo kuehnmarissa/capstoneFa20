@@ -71,5 +71,8 @@ module.exports = {
   },
   getTimer: function(req, res) {
     res.render('Timer Page.ejs')
+  },
+  getBeginPage: function(req, res) {
+    res.render('Begin Page.ejs')
   }
 }
