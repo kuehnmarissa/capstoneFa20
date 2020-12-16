@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Switch Template</title>
+    <title>Habit; Begin Page</title>
     <style>
     html {
 	 line-height: 1.15;
@@ -1633,7 +1633,7 @@
 	                        <h1 class="hero-title mt-0">Welcome to habit;!</h1>
 	                        <p class="hero-paragraph">The online coding habit tracker that gives you built in lessons and rewards based on the amount you code each day!</p>
 	                        <div class="hero-cta">
-								<a class="button button-primary" href="/">Sign In Now!</a>
+								<a class="button button-primary" onclick="rerouting()">Sign In Now!</a>
 								<div class="lights-toggle">
 									<input id="lights-toggle" type="checkbox" name="lights-toggle" class="switch" checked="checked">
 									<label for="lights-toggle" class="text-xs"><span>Turn me <span class="label-text">dark</span></span></label>
@@ -1661,6 +1661,17 @@
             
 
     <script>
+
+var local = localStorage.getItem("userInput");
+
+		function rerouting(){
+			if(local != null && local != ""){
+				window.location.href = 'http://localhost:3000/';
+			}
+			else{
+				window.location.href = 'http://localhost:3000/login';
+			}
+		}
     
     
     !(function () {
