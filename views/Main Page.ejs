@@ -1,4 +1,4 @@
-<html>
+<html id="html">
 
 <title>habit;</title>
 <meta charset="UTF-8">
@@ -8,6 +8,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+
+  body{background-color: white;}
+
   #dived{text-align: center;}
   button {
     text-align: center;
@@ -163,6 +166,7 @@
         class="w3-bar-item w3-button w3-hide-small w3-hover-white dropbtn dropdown">Basic Javascript</a>
       <a class="w3-bar-item">Streak:</a>
       <img id="streakImage" class="w3-bar-item" />
+      
       <a class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white"
         onclick="location.href='http://localhost:3000/begin'" id="signOut" style="position: fixed; right: 1.5vw; ">Sign Out</a>
     </div>
@@ -254,7 +258,7 @@
         <button onclick="reward6()" id="reward6" disabled>Santa</button>
         <button onclick="reward7()" id="reward7" disabled>Top Hat</button>
         <button onclick="reward8()" id="reward8" disabled>Wizard</button>
-      </div>
+        <button onclick="darkmode()">Dark Mode</button>
     </div>
 
     <div class="w3-row">
@@ -265,7 +269,7 @@
           <li>Lessons from experienced computer programmers.</li>
           <li>Tests to review each lesson.</li>
           <li>A minute tracker to count how many minutes you have coded. Whether on site, or on your own!</li>
-
+          
 
 
         </ul>
@@ -282,7 +286,7 @@
         <br>
         <h3>Your Awards:</h3>
         <img class="w3-border w3-padding-large w3-padding-32 w3-center" src="award.png" id="img" />
-
+     
 
       </div>
     </div>
@@ -296,10 +300,15 @@
 
     <!-- END MAIN -->
   </div>
+
   
 
   <script>
+    function darkmode(){
+   
+      document.getElementById("html").style.filter = "invert(1)"
 
+    }
 
 
 
